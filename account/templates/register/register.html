@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<div class="right-side">
+    <div class="block-form">
+        <div class="info-form">
+            <h1>Пройдите регистрацию</h1>
+        </div>
+
+        <div class="form">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {% for form in forms %}
+                    <div class="input-blank">
+                        {{form}}
+                    </div>
+                    {{form.subject.errors}}
+
+
+
+                {% endfor %}
+                <input type="submit" name="Create USER">
+            </form>
+
+            <div class="formWrapper">
+                    {{error_form}}
+            </div>
+
+        </div>
+        <a href="{% url 'login' %}">authenticate</a>
+    </div>
+</div>
+{% endblock %}

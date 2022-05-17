@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+
+        <div class="profile-block">
+
+            <div class="content">
+                <h1>Ваш профиль {{user.get_username}}</h1>
+                <div class="data">
+
+
+
+
+                    {% if profile.real_name == None %}
+                        <h1>Вы не заполнили свое реальное имя</h1>
+                    {%else%}
+                        <h1>Ваше име: {{profile.real_name}}</h1>
+                    {% endif %}
+
+                    {% if profile.surname == None %}
+                        <h1>Вы не заполнили свою фамалию</h1>
+                    {%else%}
+                        <h1>Ваша фамалия: {{profile.surname}}</h1>
+                    {% endif %}
+
+                    {% if profile.bio == None %}
+                        <h1>Биография отсутствует</h1>
+                    {%else%}
+                        <h1>Фаша биография: {{profile.bio}}</h1>
+                    {% endif %}
+                </div>
+                <a href="{% url 'profile_edit' %}">change Profile</a>
+                <br>
+                <a href="{% url 'room' %}">Main room</a>
+            </div>
+
+        </div>
+
+
+    {% endif %}
+{% endblock %}

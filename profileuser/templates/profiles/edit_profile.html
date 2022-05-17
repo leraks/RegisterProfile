@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+
+        <div class="profile-block">
+
+            <div class="content">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {% for form in profile_form %}
+                        <div class="form_edit">
+                            {{form}}
+                            {{form.label}}
+                        </div>
+                    {% endfor %}
+                    <input type="submit" name="Update profile">
+                </form>
+                <a href="{% url 'room' %}">Main room</a>
+            </div>
+
+
+        </div>
+
+
+    {% endif %}
+{% endblock %}

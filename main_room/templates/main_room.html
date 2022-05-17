@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+
+        <h1>Вы зарегестрированный User:{{user.get_username}}</h1>
+
+        <div class="access_list">
+            <div>
+                <ul>
+                    <li><a href="{% url 'logout_user' %}">Logout</a></li>
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_access">
+            <h1>Супер тайный контент</h1>
+            <div class="list-content">
+                <div class="header">
+                    <h1>Зона 51</h1>
+                </div>
+                <div style="width: 700px;" class="title">
+                    <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and
+                        I will give you a complete account of the system, and expound the actual teachings
+                        of the great explorer of the truth, the master-builder of human happiness. No one rejects,
+                        dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not
+                        know how to pursue pleasure rationally encounter consequences that are extremely painful.
+                        Nor again is there anyone who loves or pursues or desires to obtain pain of itself,
+                        because it is pain, but because occasionally circumstances occur in which toil and pain
+                        can procure him some great pleasure. To take a trivial example, which of us ever undertakes
+                        laborious physical exercise, except to obtain some advantage from it? But who has any right
+                        to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences,
+                        or one who avoids a pain that produces no resultant pleasure?"</p>
+                </div>
+            </div>
+
+        </div>
+    {% endif %}
+{% endblock %}
