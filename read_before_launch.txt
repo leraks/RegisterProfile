@@ -1,1 +1,0 @@
-set your own settings in mysite.settings in the database
