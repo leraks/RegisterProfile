@@ -20,6 +20,8 @@ envname\scripts\activate
 pip install -r requirements.txt
 
 # This app uses PostgreSQL so set mysite.settings to your database login details before using it !!!!!!
+![image](https://user-images.githubusercontent.com/67760549/173029885-67adc529-f8a7-4de1-8dbb-02eb3ebe836b.png)
+
 
 
 # Running the App
